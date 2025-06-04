@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu-open-button {
+  background: #d60039;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.menu-line {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.menu-line-1 {
+  transform: translateY(-8px);
+}
+
+.menu-line-2 {
+  transform: translateY(0);
+}
+
+.menu-line-3 {
+  transform: translateY(8px);
+}
+
+.menu-item {
+  background: #d60039;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  transform: scale(0);
+  transition: transform 0.3s ease, top 0.3s ease;
+  font-size: 20px;
+}
+
+.menu-open:checked + .menu-open-button {
+  transform: rotate(45deg);
+}
+
+.menu-open:checked ~ .menu-item {
+  transform: scale(1);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+  top: -70px;
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+  top: -140px;
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+  top: -210px;
+}
+
+.menu-open:checked ~ .menu-item:nth-child(6) {
+  top: -280px;
+}
+
+.menu-open:checked ~ .menu-item:nth-child(7) {
+  top: -350px;
+}
