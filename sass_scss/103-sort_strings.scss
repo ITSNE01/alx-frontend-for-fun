@@ -1,0 +1,17 @@
+/* My style */
+$list_to_sort: john anna zoe kim felicia carrie;
+
+@function sort-list($list) {
+  $sorted: ();
+  @each $item in $list {
+    $index: 0;
+    @while ($index < length($sorted)) and (str-slice(nth($sorted, $index + 1), 1) < str-slice($item, 1)) {
+      $index: $index + 1;
+    }
+    $sorted: append(slice($sorted, 1, $index), $item);
+    $sorted: join($sorted, slice($sorted, $index + 1), 'space');
+  }
+  @return $sorted;
+}
+
+@debug sort-list($list_to_sort);
